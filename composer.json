@@ -1,0 +1,25 @@
+{
+    "name": "blackknight467/ayah-bundle",
+    "type": "symfony-bundle",
+    "description": "Are you a human bundle for use with Symfony2",
+    "keywords": ["are", "you", "a", "human", "ayah", "bundle"],
+    "homepage": "http://github.com/blackknight467/AYAHBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Derick Felsman",
+            "email": "derickfelsman@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2"
+    },
+    "require-dev": {
+        "symfony/framework-bundle": ">=2.1,<2.3-dev"
+    },
+    "autoload": {
+        "psr-0": { "blackknight467\\AYAHBundle": "" }
+    },
+    "minimum-stability": "dev",
+    "target-dir": "blackknight467/AYAHBundle"
+}
