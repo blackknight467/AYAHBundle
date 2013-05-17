@@ -15,7 +15,7 @@ Installation
 Add the following to the "require" section of your `composer.json` file:
 
 ```
-    "gregwar/captcha-bundle": "dev-master"
+    "blackknight467/ayah-bundle": "dev-master"
 ```
 
 And update your dependencies
@@ -36,7 +36,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new blackknight467\AYAHBundle\GregwarCaptchaBundle(),
+        new blackknight467\AYAHBundle\AYAHBundle(),
     );
 }
 ```
