@@ -79,8 +79,8 @@ class AYAHType extends AbstractType
      * Returns the markup for PlayThru.
      * @return string
      */
-  public function getPublisherHTML($config = array())
-  {
+    public function getPublisherHTML($config = array())
+    {
     // Initialize.
         $session_secret = "";
         $fields = array('config' => $config);
@@ -124,7 +124,7 @@ class AYAHType extends AbstractType
             $message = "Unable to load the <i>Are You a Human</i> PlayThru&trade;.  Please contact the site owner to report the problem.";
             echo "<p style=\"$style\">$message</p>\n";
         }
-  }
+    }
 
     /**
      * Check whether the user is a human. Wrapper for the scoreGame API call
@@ -137,9 +137,9 @@ class AYAHType extends AbstractType
         if($this->sessionSecret)
         {
             $fields = array(
-        'session_secret' => urlencode($this->sessionSecret),
+                'session_secret' => urlencode($this->sessionSecret),
                 'scoring_key'    => $this->scoringKey
-      );
+        );
 
             $resp = $this->doHttpsPostReturnJSONArray($this->webService, '/ws/scoreGame', $fields);
 
@@ -276,16 +276,11 @@ class AYAHType extends AbstractType
     {
         $this->key = 'bab_'.$builder->getForm()->getName();
 
-        // $validator = new CaptchaValidator(
-        //     $this->translator,
-        //     $this->session,
-        //     $this->key,
-        //     $options['invalid_message'],
-        //     $options['bypass_code'],
-        //     $options['humanity']
-        // );
+        $validator = new AYAHValidator(
+            $this->scoreResult(),
+        );
 
-        // $builder->addEventListener(FormEvents::POST_BIND, array($validator, 'validate'));
+        builder->addEventListener(FormEvents::POST_BIND, array($validator, 'validate'));
     }
 
     /**
@@ -298,13 +293,6 @@ class AYAHType extends AbstractType
         $html = $this->getPublisherHTML();
 
         $isHuman = false;
-
-        if ($options['humanity'] > 0) {
-            $humanityKey = $this->key.'_humanity';
-            if ($this->session->get($humanityKey, 0) > 0) {
-                $isHuman = true;
-            }
-        }
 
         $view->vars = array_merge($view->vars, array(
             'ayah'     => $html,
