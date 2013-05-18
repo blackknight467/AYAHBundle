@@ -1,0 +1,11 @@
+{# blackknight467/AYAHBundle/Resources/views/ayah.html.twig #}
+{% block ayah_widget %}
+{% if is_human %}
+-
+{% else %}
+    {% spaceless %}
+        {{ ayah_html }}
+        {{ form_widget(form) }}
+    {% endspaceless %}
+{% endif %}
+{% endblock %}

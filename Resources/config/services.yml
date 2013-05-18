@@ -5,3 +5,10 @@ services:
 #    ayah.example:
 #        class: %ayah.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+services:
+    ayah.type:
+        class: blackknight467\AYAHBundle\Type\AYAHType
+        arguments:
+            - @session
+        tags:
+            - { name: form.type, alias: ayah }
