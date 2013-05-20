@@ -30,8 +30,7 @@ class AYAHValidator
     public function validate(FormEvent $event)
     {
         if ($this->score == false) {
-            $form->addError(new FormError($this->translator->trans('You are not human, appearently... This is a problem',
-                array(), 'validators')));
+            $form->addError(new FormError('You are not human, appearently... This is a problem'));
         }
     }
 }

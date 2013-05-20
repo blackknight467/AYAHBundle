@@ -2,7 +2,7 @@
     "name": "blackknight467/ayah-bundle",
     "type": "symfony-bundle",
     "description": "Are you a human bundle for use with Symfony2",
-    "keywords": ["are", "you", "a", "human", "ayah", "bundle"],
+    "keywords": ["are", "you", "a", "human", "ayah", "bundle", "symfony2", "captcha", "security"],
     "homepage": "http://github.com/blackknight467/AYAHBundle",
     "license": "MIT",
     "authors": [

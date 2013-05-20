@@ -281,7 +281,7 @@ class AYAHType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $this->key = 'bab_'.$builder->getForm()->getName();
-
+        
         $validator = new AYAHValidator(
             $this->scoreResult()
         );
