@@ -8,6 +8,7 @@ services:
 services:
     ayah.type:
         class: blackknight467\AYAHBundle\Type\AYAHType
-        arguments: %ayahkeys%
+        arguments: 
+        	- %ayahkeys%
         tags:
             - { name: form.type, alias: ayah }
