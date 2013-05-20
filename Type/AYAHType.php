@@ -301,7 +301,7 @@ class AYAHType extends AbstractType
         $isHuman = false;
 
         $view->vars = array_merge($view->vars, array(
-            'ayah'     => $html,
+            'ayah_html' => $html,
             'is_human' => $isHuman
         ));
 
