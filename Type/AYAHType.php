@@ -1,4 +1,4 @@
-<? php
+<?php
 
 namespace blackknight467\AYAHBundle\Type;
 
@@ -273,7 +273,6 @@ class AYAHType extends AbstractType
 
         return $result;
     }
-}
     
     /**
      * @param \Symfony\Component\Form\FormBuilderInterface $builder
@@ -284,10 +283,10 @@ class AYAHType extends AbstractType
         $this->key = 'bab_'.$builder->getForm()->getName();
 
         $validator = new AYAHValidator(
-            $this->scoreResult(),
+            $this->scoreResult()
         );
 
-        builder->addEventListener(FormEvents::POST_BIND, array($validator, 'validate'));
+        $builder->addEventListener(FormEvents::POST_BIND, array($validator, 'validate'));
     }
 
     /**
@@ -311,8 +310,7 @@ class AYAHType extends AbstractType
     {
         return array(
             'is_human' => false
-            ),
-        );
+            );
     }
 
     /**
