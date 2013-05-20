@@ -5,6 +5,8 @@ namespace blackknight467\AYAHBundle\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
 
+use blackknight467\AYAHBundle\Validator\AYAHValidator;
+
 class AYAHType extends AbstractType
 {
     /**
