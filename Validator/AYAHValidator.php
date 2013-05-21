@@ -8,9 +8,7 @@ use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Translation\TranslatorInterface;
 
 /**
- * Captcha validator
- *
- * @author Gregwar <g.passault@gmail.com>
+ * Are You A Human validator
  */
 class AYAHValidator
 {
