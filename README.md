@@ -26,7 +26,7 @@ Add the following to the "require" section of your `composer.json` file:
 Add the following lines to your `deps` file:
 
 ```
-    [GregwarCaptchaBundle]
+    [AYAHBundle]
         git=http://github.com/blackknight467/AYAHBundle.git
         target=/bundles/blackknight467/AYAHBundle
 ```
