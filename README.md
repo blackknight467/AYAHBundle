@@ -84,8 +84,10 @@ Configuration
 =============
 Add the following configuration to your `app/config/config.yml`:
 
+```
 ayahPublisherKey: 'your ayah publisher key here'
 ayahScoringKey:  'your ayah scoring key here'
+```
 
 Usage
 =====
