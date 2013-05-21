@@ -29,8 +29,10 @@ class AYAHValidator
      */
     public function validate(FormEvent $event)
     {
+        $form = $form = $event->getForm();
+
         if ($this->score == false) {
-            $form->addError(new FormError('You are not human, appearently... This is a problem'));
+            $form->addError(new FormError('You did not pass the "Are You A Human" test. This is a problem, study up and try again.'));
         }
     }
 }
