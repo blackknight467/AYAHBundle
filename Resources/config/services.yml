@@ -1,5 +1,4 @@
 parameters:
-#    ayah.example.class: blackknight467\AYAHBundle\Example
     ayahPublisherKey: null
     ayahScoringKey: null
 
