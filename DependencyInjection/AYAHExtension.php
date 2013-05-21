@@ -22,10 +22,13 @@ class AYAHExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
+        $container->setParameter('gregwar_captcha.config', $config);
+
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
         $resources = $container->getParameter('twig.form.resources');
-        $container->setParameter('twig.form.resources', array_merge(array('AYAHBundle::ayah.html.twig'), $resources));
+        $resources = array_merge(array('AYAHBundle::ayah.html.twig'), $resources);
+        $container->setParameter('twig.form.resources', $resources);
     }
 }

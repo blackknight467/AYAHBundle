@@ -70,6 +70,7 @@ class AYAHType extends AbstractType
         $this->publisherKey = $publisherKey;
         $this->scoringKey = $scoringKey;
         $this->webService = $webServiceHost;
+        
     }
 
     /**
@@ -296,6 +297,7 @@ class AYAHType extends AbstractType
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
+        
         $html = $this->getPublisherHTML();
 
         $isHuman = false;
@@ -306,11 +308,11 @@ class AYAHType extends AbstractType
         ));
 
     }
-    public function getDefaultOptions(array $options)
+
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        return array(
-            'is_human' => false
-            );
+        $this->options['mapped'] = false;
+        $resolver->setDefaults($this->options);
     }
 
     /**

@@ -4,7 +4,9 @@
 -
 {% else %}
     {% spaceless %}
-        {{ ayah_html }}
+        {% autoescape false %}
+            {{ ayah_html }}
+        {% endautoescape %}
         {{ form_widget(form) }}
     {% endspaceless %}
 {% endif %}
