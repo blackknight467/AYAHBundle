@@ -52,8 +52,16 @@ And update your dependencies
 
 If you use composer, you can skip this step.
 
-```
-    "blackknight467/ayah-bundle": "dev-master"
+Now you will need to add the `blackknight467` namespace to your autoloader:
+
+``` php
+<?php
+// app/autoload.php
+
+$loader->registerNamespaces(array(
+    // ...
+    'blackknight467' => __DIR__.'/../vendor/bundles',
+));
 ```
 
 ### Step 3: Enable the bundle
