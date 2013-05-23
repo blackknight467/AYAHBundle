@@ -1,8 +1,8 @@
 {
     "name": "blackknight467/ayah-bundle",
     "type": "symfony-bundle",
-    "description": "Are you a human bundle for use with Symfony2",
-    "keywords": ["are", "you", "a", "human", "ayah", "bundle", "symfony2", "captcha", "security"],
+    "description": "Are you a human bundle for use with Symfony 2.  This bundle adds the "ayah" form type.  Simple and easy to use.  Lets leave the captcha behind",
+    "keywords": ["are", "you", "a", "human", "ayah", "bundle", "symfony", "symfony2", "captcha", "security", "areyouahuman"],
     "homepage": "http://github.com/blackknight467/AYAHBundle",
     "license": "MIT",
     "authors": [
