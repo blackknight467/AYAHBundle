@@ -82,7 +82,7 @@ public function registerBundles()
 ```
 Configuration
 =============
-Add the following configuration to your `app/config/config.yml`:
+Add the following configuration to your `app/config/parameters.yml`:
 
 ```
 ayahPublisherKey: 'your ayah publisher key here'
