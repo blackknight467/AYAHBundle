@@ -13,13 +13,14 @@ use Symfony\Component\Translation\TranslatorInterface;
 class AYAHValidator
 {
     private $score;
-
+    private $error;
     /**
      * @param boolean $score
      */
-    public function __construct($score)
+    public function __construct($score, $error)
     {
         $this->score = $score;
+        $this->error = $error;
     }
 
     /**
@@ -30,7 +31,7 @@ class AYAHValidator
         $form = $form = $event->getForm();
 
         if ($this->score == false) {
-            $form->addError(new FormError('You did not pass the "Are You A Human" test. This is a problem, study up and try again.'));
+            $form->addError(new FormError($this->error));
         }
     }
 }

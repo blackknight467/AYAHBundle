@@ -1,12 +1,18 @@
 parameters:
     ayahPublisherKey: null
     ayahScoringKey: null
+    ayahErrorMessage: 'You did not pass the "Are You A Human" test. This is a problem. Study up and try again.'
+    ayah_service.class: blackknight467\AYAHBundle\Service\AYAHService
 
 services:
     ayah.type:
         class: blackknight467\AYAHBundle\Type\AYAHType
-        arguments: 
+        arguments:
             - %ayahPublisherKey%
             - %ayahScoringKey%
+            - %ayahErrorMessage%
         tags:
             - { name: form.type, alias: ayah }
+    ayah:
+        class: %ayah_service.class%
+        arguments: [%ayahPublisherKey%, %ayahScoringKey%, @service_container]

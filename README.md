@@ -89,6 +89,18 @@ ayahPublisherKey: 'your ayah publisher key here'
 ayahScoringKey:  'your ayah scoring key here'
 ```
 
+Advanced Configuration
+=============
+The default error message for failing the are you a human test is:
+
+'You did not pass the "Are You A Human" test. This is a problem. Study up and try again.'
+
+For a custom error message add the following to you `app/config/parameters.yml`:
+
+```
+ayahErrorMessage: 'your error message here'
+```
+
 Usage
 =====
 
@@ -96,6 +108,23 @@ Usage
 <?php
     // ...
     $builder->add('ayah', 'ayah'); // That's all !
+    // ...
+```
+
+Advanced Usage
+=====
+If you need to skip the test scoring for some reason (e.g. automated testing) use the assume_human option.
+
+if assume_human is true, it turns off the form validation for of the are you a human field so no errors shall occur if the test is skipped.
+
+example:
+```php
+<?php
+    // ...
+    $builder->add('ayah', 'ayah', array(
+                'assume_human' => true
+            ))
+
     // ...
 ```
 
