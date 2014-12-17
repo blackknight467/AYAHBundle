@@ -14,8 +14,10 @@ class AYAHValidator
 {
     private $score;
     private $error;
+
     /**
-     * @param boolean $score
+     * @param        $score
+     * @param String $error
      */
     public function __construct($score, $error)
     {
@@ -28,7 +30,7 @@ class AYAHValidator
      */
     public function validate(FormEvent $event)
     {
-        $form = $form = $event->getForm();
+        $form = $event->getForm();
 
         if ($this->score == false) {
             $form->addError(new FormError($this->error));
