@@ -1,7 +1,4 @@
 parameters:
-    ayahPublisherKey: null
-    ayahScoringKey: null
-    ayahErrorMessage: 'You did not pass the "Are You A Human" test. This is a problem. Study up and try again.'
     ayah_service.class: blackknight467\AYAHBundle\Service\AYAHService
 
 services:

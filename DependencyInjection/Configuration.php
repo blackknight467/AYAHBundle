@@ -20,9 +20,12 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('ayah');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+            ->scalarNode('publisher_key')->isRequired()->info('the publisher key of your "Are You A Human" Application')->end()
+            ->scalarNode('scoring_key')->isRequired()->info('the scoring key of your "Are You A Human" Application')->end()
+            ->scalarNode('error_message')->defaultValue('You did not pass the "Are You A Human" test. This is a problem. Study up and try again.')->end()
+            ->end();
 
         return $treeBuilder;
     }

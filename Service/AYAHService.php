@@ -2,16 +2,10 @@
 
 namespace blackknight467\AYAHBundle\Service;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\Yaml\Yaml;
+use Symfony\Component\PropertyAccess\Exception\InvalidArgumentException;
 
 class AYAHService
 {
-    /**
-     * @var ContainerInterface
-     */
-    private $container;
-
     /**
      * The developer publisher key.
      * @var string
@@ -37,7 +31,7 @@ class AYAHService
      */
     protected $sessionSecret;
 
-  protected $version = '1.1.7';
+    protected $version = '1.1.7';
 
     /**
      * Constructs a new AYAH instance and grabs the session secret if it exists.
@@ -46,10 +40,8 @@ class AYAHService
      * @param string $webServiceHost
      * @throws InvalidArgumentException
      */
-    public function __construct($publisherKey, $scoringKey, $container, $webServiceHost = 'ws.areyouahuman.com')
+    public function __construct($publisherKey, $scoringKey, $webServiceHost = 'ws.areyouahuman.com')
     {
-        $this->container = $container;
-
         if(array_key_exists('session_secret', $_REQUEST)) {
             $this->sessionSecret = $_REQUEST['session_secret'];
         }
@@ -83,11 +75,12 @@ class AYAHService
     }
 
     /**
-     * Returns the markup for PlayThru.
+     * Returns the markup for PlayThru.=
+     * @param array $config
      * @return string
      */
-  public function getPublisherHTML($config = array())
-  {
+    public function getPublisherHTML($config = array())
+    {
     // Initialize.
         $session_secret = "";
         $fields = array('config' => $config);
@@ -131,7 +124,7 @@ class AYAHService
             $message = "Unable to load the <i>Are You a Human</i> PlayThru&trade;.  Please contact the site owner to report the problem.";
             echo "<p style=\"$style\">$message</p>\n";
         }
-  }
+    }
 
     /**
      * Check whether the user is a human. Wrapper for the scoreGame API call
@@ -177,10 +170,10 @@ class AYAHService
 
     /**
      * Do an HTTPS POST, return some JSON decoded as array.
-     * @param $host hostname
+     * @param $hostname hostname
      * @param $path path
      * @param $fields associative array of fields
-     * return array Decoded json structure or empty data structure
+     * @return array|mixed Decoded json structure or empty data structure
      */
     protected function doHttpsPostReturnJSONArray($hostname, $path, $fields)
     {
@@ -202,7 +195,7 @@ class AYAHService
      * @param string $hostname
      * @param string $path
      * @param array $fields
-     * @return Ambigous <string, mixed>
+     * @return string|mixed
      */
     protected function doHttpsPost($hostname, $path, $fields)
     {

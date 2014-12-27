@@ -18,7 +18,7 @@ I highly suggest using Composer.  Honestly i've only tested this using composer.
 Add the following to the "require" section of your `composer.json` file:
 
 ```
-    "blackknight467/ayah-bundle": "dev-master"
+    "blackknight467/ayah-bundle": "1.*"
 ```
 
 ***Using the vendors script***
@@ -82,11 +82,12 @@ public function registerBundles()
 ```
 Configuration
 =============
-Add the following configuration to your `app/config/parameters.yml`:
+Add the following configuration to your `app/config/config.yml`:
 
 ```
-ayahPublisherKey: 'your ayah publisher key here'
-ayahScoringKey:  'your ayah scoring key here'
+ayah:
+    publisher_key: 'your ayah publisher key here'
+    scoring_key: 'your ayah scoring key here'
 ```
 
 Advanced Configuration
@@ -95,10 +96,11 @@ The default error message for failing the are you a human test is:
 
 'You did not pass the "Are You A Human" test. This is a problem. Study up and try again.'
 
-For a custom error message add the following to you `app/config/parameters.yml`:
+For a custom error message add the following to you `app/config/config.yml`:
 
 ```
-ayahErrorMessage: 'your error message here'
+ayah:
+    error_message: 'your error message here'
 ```
 
 Usage

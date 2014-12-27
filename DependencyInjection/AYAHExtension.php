@@ -22,7 +22,9 @@ class AYAHExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('ayah.config', $config);
+        $container->setParameter('ayahPublisherKey', $config['publisher_key']);
+        $container->setParameter('ayahScoringKey', $config['scoring_key']);
+        $container->setParameter('ayahErrorMessage', $config['error_message']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
