@@ -11,8 +11,6 @@ Installation
 
 ### Step 1: Download the AYAHBundle
 
-I highly suggest using Composer.  Honestly i've only tested this using composer.  I haven't tried adding this package using submodules or the vendors script, but it should work regaurdless.
-
 ***Using Composer***
 
 Add the following to the "require" section of your `composer.json` file:
@@ -21,50 +19,7 @@ Add the following to the "require" section of your `composer.json` file:
     "blackknight467/ayah-bundle": "1.*"
 ```
 
-***Using the vendors script***
-
-Add the following lines to your `deps` file:
-
-```
-    [AYAHBundle]
-        git=http://github.com/blackknight467/AYAHBundle.git
-        target=/bundles/blackknight467/AYAHBundle
-```
-
-Now, run the vendors script to download the bundle:
-
-``` bash
-$ php bin/vendors install
-```
-
-***Using submodules***
-
-If you prefer instead to use git submodules, then run the following:
-
-``` bash
-$ git submodule add git://github.com/blackknight467/AYAHBundle.git vendor/bundles/blackknight467/AYAHBundle
-$ git submodule update --init
-```
-
-And update your dependencies
-
-### Step 2: Configure the Autoloader
-
-If you use composer, you can skip this step.
-
-Now you will need to add the `blackknight467` namespace to your autoloader:
-
-``` php
-<?php
-// app/autoload.php
-
-$loader->registerNamespaces(array(
-    // ...
-    'blackknight467' => __DIR__.'/../vendor/bundles',
-));
-```
-
-### Step 3: Enable the bundle
+### Step 2: Enable the bundle
 
 Finally, enable the bundle in the kernel:
 
