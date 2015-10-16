@@ -1,3 +1,0 @@
-ayah_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: AYAHBundle:AYAH:index }
