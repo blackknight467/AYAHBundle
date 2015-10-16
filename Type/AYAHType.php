@@ -51,7 +51,7 @@ class AYAHType extends AbstractType
                 $this->errorMessage
             );
 
-            $builder->addEventListener(FormEvents::POST_BIND, array($validator, 'validate'));
+            $builder->addEventListener(FormEvents::POST_SUBMIT, array($validator, 'validate'));
         }
 
     }
