@@ -2,10 +2,8 @@
 
 namespace blackknight467\AYAHBundle\Validator;
 
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormEvent;
-use Symfony\Component\Translation\TranslatorInterface;
 
 /**
  * Are You A Human validator
