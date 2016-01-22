@@ -4,7 +4,7 @@ blackknight467's AYAHBundle
 The `AYAHBundle` adds support for a "ayah" form type for the
 Symfony2 form component.
 
-Minimum Requirement: Symfony 2.3
+Minimum Requirement: Symfony 2.7
 
 NOTE: I am not in any way associated with Are you a human.  I am just some guy who needed to implent are you human using symfony 2 forms and then decided to share his code to make life easier for anyone who wants to leave captchas behind.
 
@@ -18,7 +18,7 @@ Installation
 Add the following to the "require" section of your `composer.json` file:
 
 ```
-    "blackknight467/ayah-bundle": "1.*"
+    "blackknight467/ayah-bundle": "2.*"
 ```
 
 ### Step 2: Enable the bundle
